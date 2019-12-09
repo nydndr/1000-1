@@ -1,0 +1,315 @@
+html, body
+{
+    margin: 0; padding: 0;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+/* NAVBAR */
+nav
+{
+    width: 80vw; margin-left: 10vw;
+    font-family: 'Fredoka One', cursive;
+    font-size: 3vh;
+}
+
+nav ul
+{
+    margin: 0; padding: 0;
+    list-style: none;
+    margin-top: 5vh;
+}
+
+nav ul li
+{
+    display: inline-block;
+}
+
+nav ul li a:hover
+{
+    transition: 200ms ease all;
+    color: #ff6f5e;
+}
+
+nav a
+{
+    background-color: unset;
+    color: black;
+    padding: 0; font-size: inherit; margin: 0;
+}
+
+/* LANDING PAGE */
+#land
+{
+    width: 80vw; margin-left: 10vw;
+    margin-top: 20vh; margin-bottom: 20vh;
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+#title, #concept
+{
+    width: 100%;
+    font-family: 'Fredoka One', cursive;
+} 
+
+h1
+{
+    font-size: 10vh;
+    color: #f0134d;
+}
+
+h2
+{
+    font-size: 6vh;
+    color: #ff6f5e;
+}
+
+h3
+{
+    margin-top: 8vh;
+    text-align: justify;
+    font-size: 4vh;
+    color: #212121;
+    font-weight: lighter;
+}
+
+h3 span
+{
+    color: black;
+}
+
+a
+{
+    text-transform: none;
+    text-decoration: none;
+    color: white;
+    background-color: #40bfc1;
+    text-align: center;
+    font-family: 'Fredoka One', cursive;
+    padding: 2%;
+    font-size: 2vh;
+    border-radius: 5px;
+}
+
+/* CONSULTA */
+#consulta
+{
+    background-color: #f5f0e3;
+    text-align: center;
+    display: none;
+    min-height: 70vh;
+}
+
+#consulta a
+{
+    padding: 0;
+    padding: 1%; width: 10%;
+    font-weight: lighter;
+}
+
+h4
+{
+    font-family: 'Fredoka One', cursive;
+    font-weight: lighter;;
+    font-size: 3vh;
+    padding-top: 10vh;
+}
+
+input
+{
+    font-family: "Lato", sans-serif;
+    background-color: unset;
+    color: grey;
+    border: none;
+    border-bottom: 2px solid #ff6f5e;
+    margin-bottom: 5vh;
+}
+
+#resultado
+{
+    width: 80vw; padding-left: 10vw; padding-right: 10vw;
+    display: grid;
+    grid-template-columns: 33.3% 33.3% 33.3%;
+    background-color: #f5f0e3;
+    margin: 0; margin-top: 10vh;
+}
+
+#resultado div
+{
+    display: none;
+    text-align: center;
+    margin-bottom: 10vh;
+}
+
+h5
+{
+    font-family: 'Fredoka One', cursive;
+    font-size: 10vh;
+    color: #ff6f5e;
+    margin: 0; padding: 0;
+}
+
+#milDia
+{
+    margin-top: 5%;
+}
+
+#milDia h5
+{
+    font-size: 7vh;
+}
+
+#resultado p
+{
+    font-family: "Lato", sans-serif;
+    font-size: 4vh;
+}
+
+/* MESSAGE */
+#message
+{
+    margin: 0;
+    padding-top: 5vh; padding-bottom: 5vh;
+    background-color: #f0134d;
+    width: 80vw; padding-left: 10vw; padding-right: 10vw;
+}
+
+#message p
+{
+    color: white;
+    font-family: "Lato", sans-serif;
+    text-align: justify;
+    font-size: 4vh;
+    font-weight: lighter;
+}
+
+/* ABOUT */
+#about
+{
+    margin: 0; padding: 0;
+    width: 80vw; padding-left: 10vw; padding-right: 10vw;
+    padding-bottom: 5vh;
+    background-color: #40bfc1;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    font-size: 6vh;
+    font-family: "Fredoka One", cursive;
+}
+
+#about div:nth-of-type(2)
+{
+    text-align: right;
+}
+
+.heading, .type
+{
+    margin: 0; padding: 0;
+    text-transform: uppercase;
+}
+
+.heading
+{
+    margin-top: 10vh;
+    margin-bottom: 5vh;
+}
+
+.type
+{
+    color: #f5f0e3;
+    margin-bottom: 2vh;
+}
+
+#about p 
+{
+    margin: 0; padding: 0;
+    color: white;
+    font-size: 5vh;
+}
+
+/* FOOTER */
+footer
+{
+    margin: 0; padding: 0;
+    background-color: black;
+    text-align: center;
+    width: 100vw; margin: 0; padding 0;
+    padding-top: 5vh; padding-bottom: 5vh;
+}
+
+footer p
+{
+    font-family: "Lato", sans-serif;
+    margin: 0; padding: 0;
+    color: white;
+    font-size: 3vh;
+}
+
+footer ul
+{
+    list-style: none;
+    width: 100%; margin: 0; padding: 0;
+    margin-top: 5vh;
+}
+
+footer ul li
+{
+    display: inline-block;
+}
+
+footer img
+{
+    width: 4vw; height: 7vh;
+}
+
+footer a, #about a
+{
+    text-transform: none;
+    text-decoration: none;
+    background-color: unset;
+    font-size: inherit;
+}
+
+footer img:hover
+{
+    transition: 200ms ease all;
+    transform: scale(1.5);
+}
+
+@media only screen and (max-width: 450px) {
+  #land
+  {
+      grid-template-columns: 100%;
+  }
+
+  #resultado
+  {
+      grid-template-columns: 100%; 
+  }
+
+  h5
+  {
+    font-size: 5vh;
+  }
+
+  #about
+  {
+      font-size: 5vh;
+      padding-bottom: 10vh;
+  }
+
+  #about p
+  {
+      font-size: 4vh;
+  }
+
+  footer
+  {
+      width: 80%; padding-left: 10%; padding-right: 10%;
+  }
+
+  footer img
+  {
+      width: 8vw; height: 8vh;
+  }
+}
