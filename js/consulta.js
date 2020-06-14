@@ -1,62 +1,62 @@
+var calcularBtn = document.querySelector("#calcular-btn");
+var containerResultado = document.querySelector("#container-resultado");
 
-function validarEntrada()
-{
-    let entrada = $("input").val();
-    console.log(entrada);
+var inputData = document.querySelector("#data-inicio");
 
-    if (!entrada)
+calcularBtn.addEventListener("click", () => {
+    let entrada = inputData.value;
+
+    if(!entrada)
     {
-        window.alert("Você não inseriu nada não, meu chegado. :)");
-    } else  {
-        let ano = entrada[0] + entrada[1] + entrada[2] + entrada[3];
-        let mes = entrada[5] + entrada[6];
-        let dia = entrada[8] + entrada[9];
+        let emptyMessage = `<div class="flex flex-col space-y-16">
+                                <p class="text-center text-6xl font-medium mt-40">Você não inseriu<br>uma data :)</p>
+                                <p class="text-center text-3xl font-light mt-8">Tente mais uma vez.</p>
+                            </div>`;
 
-        calculo(dia, mes, ano);
+        containerResultado.insertAdjacentHTML('beforeend', emptyMessage);
+
+    } else {
+
+        calcular(entrada);
     }
-}
 
-function calculo(dia, mes, ano)
-{
+});
+
+let calcular = (dataInicio) => {
     let tempoDeNamoro, ateMil, milesimoDia;
     let hoje = moment();
-    let inicio = moment(new Date(ano, mes, dia, 0,0,0));
+    
+    dataInicio = moment(dataInicio);
 
-    //calculando o tempo de namoro
-    tempoDeNamoro = hoje.diff(inicio, 'days');
+     //calculando o tempo de namoro
+    tempoDeNamoro = hoje.diff(dataInicio, 'days');
 
-    //calculando a milésima data
-    milesimoDia = inicio.add(1000, 'days');
-
-    //calculando dias até mil
+     //calculando a milésima data
+    milesimoDia = dataInicio.add(1000, 'days');
+ 
+     //calculando dias até mil
     ateMil = milesimoDia.diff(hoje, 'days');
 
-    exibir(tempoDeNamoro, milesimoDia, ateMil);
+    exibirResultado(tempoDeNamoro,milesimoDia,ateMil)
 }
 
-function exibir(tempoDeNamoro, milesimoDia, ateMil)
-{
-        milesimoDia = milesimoDia.format("D") + "/" + milesimoDia.format("MM") + "/" + milesimoDia.format("Y");
-    
-        //exibindo o tempo de namoro
-        $("#diasDeNamoro h5").html(tempoDeNamoro);
+let exibirResultado = (tempoDeNamoro,milesimoDia,ateMil) => {
 
-        //exibindo quanto tempo falta para 1000
-        $("#diasParaMil h5").html(ateMil);
+    containerResultado.innerHTML = ' ';
+    let resultMessage = `<div class="flex flex-col space-y-16">
+                                <div class="text-center">
+                                    <p class="font-medium text-6xl">${tempoDeNamoro}</p>
+                                    <p class="text-2xl">dias de namoro.</p>
+                                </div>
+                                <div class="text-center">
+                                    <p class="font-medium text-6xl">${ateMil}</p>
+                                    <p class="text-2xl">dias para o 1000º.</p>
+                                </div>
+                                <div class="text-center">
+                                    <p class="font-medium text-6xl">${milesimoDia.format("D") + "/" + milesimoDia.format("MM") + "/" + milesimoDia.format("Y")}</p>
+                                    <p class="text-2xl">é a data do seu milésimo dia.</p>
+                                </div>
+                            </div>`;
 
-        //exibindo o milésimo dia
-        $("#milDia h5").html(milesimoDia);
-
-        $("#resultado").fadeIn("slow");
-
-        $("#diasDeNamoro").fadeIn("slow");
-        $("#diasParaMil").fadeIn("slow");
-        $("#milDia").fadeIn("slow");
+    containerResultado.insertAdjacentHTML('beforeend', resultMessage);
 }
-
-$("#iniciarConsulta").click(function(){
-    console.log("Achei");
-    $("#consulta").fadeIn("slow");
-
-    $("#Submit").click(validarEntrada);
-})
