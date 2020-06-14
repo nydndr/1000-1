@@ -12,6 +12,7 @@
             .fredoka{ font-family: 'Fredoka One', cursive;}
             .pinkBackground { background-color: #FF6F5E;}
             .pinkText { color: #FF6F5E;}
+            body { overflow: hidden;}
         </style>
     </head>
 
@@ -29,10 +30,11 @@
                 <form class="text-center pt-24 pb-24">
                     <h4 class="text-2xl mb-12">Quando você<br>começou a<br>namorar?</h4>
                     <input class="block mb-12 bg-white appearance-none rounded w-64 py-2 px-4 text-gray-700 leading-tight
-                    focus:outline-none focus:bg-white focus:border-purple-500" type="date" id="dataInicio">
+                    focus:outline-none focus:bg-white focus:border-purple-500" type="date" id="data-inicio">
                     <button type="button"
-                    @click="isModalOpen = true"
-                    @click="isFooterVisible = false"
+                        @click="isModalOpen = true"
+                        @click="isFooterVisible = false"
+                        id="calcular-btn"
                         class="shadow pinkBackground hover:bg-red-500
                         focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" >Calcular</button>
                 </form>
@@ -73,28 +75,19 @@
             </section>
         </footer>
 
-            <section id="telaResultado" class="overflow-auto w-full text-white pinkBackground" x-show="isModalOpen"
+            <section class="overflow-auto w-full text-white pinkBackground" x-show="isModalOpen"
             :class="{ 'absolute inset-0 ': isModalOpen }">
                 <button class="w-16 h-16 m-0 p-0 ml-8" @click="isModalOpen = false" @click="isFooterVisible = true">
                     <svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 25 25" width="30" height="30" stroke="currentColor">
                         <path d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
                     </svg>
                 </button>
-                <div class="flex flex-col space-y-16">
-                    <div class="text-center">
-                        <p class="font-medium text-6xl">383</p>
-                        <p class="text-2xl">dias de namoro.</p>
-                    </div>
-                    <div class="text-center">
-                        <p class="font-medium text-6xl">616</p>
-                        <p class="text-2xl">dias para o 1000º.</p>
-                    </div>
-                    <div class="text-center">
-                        <p class="font-medium text-6xl">23/01/21</p>
-                        <p class="text-2xl">é a data do seu milésimo dia.</p>
-                    </div>
+                <div id="container-resultado" class="flex flex-col space-y-16">
+
                 </div>
             </section>
-
     </body>
+
+    <script src="js/moment.min.js"></script>
+    <script src="js/consulta.js"></script>
 </html>
