@@ -3,105 +3,98 @@
     <head>
         <meta charset="utf-8">
         <title>1000&1</title>
-        <link href="https://fonts.googleapis.com/css?family=Fredoka+One|Lato&display=swap" rel="stylesheet">
         <link rel="icon" href="view/favicon.ico">
-        <link rel="stylesheet" type="text/css" href="view/style.css">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+        <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+
+        <style>
+            .fredoka{ font-family: 'Fredoka One', cursive;}
+            .pinkBackground { background-color: #FF6F5E;}
+            .pinkText { color: #FF6F5E;}
+        </style>
     </head>
 
-    <body>
-        <nav>
-            <ul>
-                <li><a href="#land">ENTENDA /</a></li>
-                <li><a href="#consulta">USE /</a></li>
-                <li><a href="#about">CONHEÇA</a> </li>
-            </ul>
-        </nav>
-
-        <section id="land">
-            <div id="title">
-                <h1>1000&1</h1>
-                <h2>DIAS DE AMOR<br>COM VOCÊ</h2>
+    <body  x-data="{ 'isModalOpen': false, 'isFooterVisible': true}">
+        <section class="w-full h-full grid grid-cols-2 pt-24 pb-16 pl-32 pr-32" style="background-color: #FFFAFA;" @keydown.escape="showModal = false">
+            <div class="w-4/5">
+                <h1 class="fredoka text-6xl pinkText mb-0">1000&1</h1>
+                <h2 class="text-2xl mt-0">Insira o conceito de 1000 dias na sua relação.</h2>
+                <h3 class="text-lg mt-2">Abrace os mais de dois anos que vocês passaram, ou passarão, juntos.
+                    <span class="pinkText">1000 é um número muito grande, assim como vocês.</span>
+                </h3>
+                <img class="w-3/5 ml-16 mt-8" src="view/couple1.png">
             </div>
-            <div id="concept">
-                <h3>Já parou pra pensar em quanta coisa é 1000 dias? É muita coisa.
-                    Muito mais que sua boda de 1 ou 2 anos, comemore sua boda a boda de 1000 dias.
-                    <span>Descubra se você já alcançou os 1000 dias ou quanto tempo falta pra essa marca tão importante.</span></h3>
-                <a id="iniciarConsulta" href="#consulta">CONSULTAR</a>
+            <div class="w-4/5 flex justify-center ml-16" style="background-color: #FEEBC8;">
+                <form class="text-center pt-24 pb-24">
+                    <h4 class="text-2xl mb-12">Quando você<br>começou a<br>namorar?</h4>
+                    <input class="block mb-12 bg-white appearance-none rounded w-64 py-2 px-4 text-gray-700 leading-tight
+                    focus:outline-none focus:bg-white focus:border-purple-500" type="date" id="dataInicio">
+                    <button type="button"
+                    @click="isModalOpen = true"
+                    @click="isFooterVisible = false"
+                        class="shadow pinkBackground hover:bg-red-500
+                        focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" >Calcular</button>
+                </form>
             </div>
         </section>
 
-        <section id="consulta">
-            <h4>QUANDO VOCÊS COMEÇARAM A NAMORAR?</h4>
-            <form>
-               <input type="date">
-               <br>
-               <a id="Submit">1000 DIAS!</a>
-            </form>
+        <footer class="w-full h-full pinkBackground mt-0 pt-24 pb-16 pl-32 pr-32 text-white" x-show="isFooterVisible">
             
-
-            <div id="resultado">
-                <div id="diasDeNamoro">
-                    <h5>00</h5>
-                    <p>dias de namoro.</p>
+            <h4 class="fredoka text-3xl mb-16">1000&1</h4>
+            <section class="grid grid-cols-2">
+                <div class="w-4/5">
+                    <p class="text-base mb-4">Da série de piadas levadas a sério demais:</p>
+                    <p class="text-3xl mb-16">Esse site é resultado de uma<br>conversa entre amigos, funcionalidade e estética são um completo acidente.</p>
+                    <p class="text-lg mb-4">Idealizado por: Duda Pasquel e Bárbara Martins</p>
+                    <p class="text-lg">Desenvolvido por: Nicoly Dandara</p>
+                    <div>
+                        <ul class="flex mt-8 space-x-4">
+                            <a class="m-0 w-1/12"><img src="view/github.png"></a>
+                            <a class="m-0 w-1/12"><img src="view/behance.png"></a>
+                            <a class="m-0 w-1/12"><img  src="view/twitter.png"></a>
+                        </ul>
+                    </div>
+                        
                 </div>
-                <div id="diasParaMil">
-                    <h5>00</h5>
-                    <p>dias para 1000 dias.</p>
+                <div class="grid grid-cols-2">
+                    <div class="space-y-2 text-lg">
+                        <p class="font-medium">Ferramentas</p>
+                        <p><a href="https://momentjs.com/">Moment.js</a></p>
+                        <p><a href="https://github.com/alpinejs/alpine">Alpine.js</a></p>
+                        <p><a href="https://tailwindcss.com/">Tailwind CSS</a></p>
+                    </div>
+                    <div class="space-y-2 text-lg">
+                        <p class="font-medium">Ilustrações</p>
+                        <p><a href="https://blush.design/">Blush Design</a></p>
+                        <p><a href="https://heroicons.dev/">Hero Icons</a></p>
+                    </div>
                 </div>
-                <div id="milDia">
-                    <h5>00/00/00</h5>
-                    <p>é o seu milésimo dia</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="message">
-            <p>
-                    O conceito de 1000 dias é muito usado na área da obstetrícia e pediatria pois corresponde ao tempo de gestação somado aos dois anos de vida do bebê.
-                    Insira o conceito de 1000 dias na sua relação, abrace os mais de dois anos que vocês passaram ou passarão juntos, pensando em como 1000 é um número grande,
-                    assim como vocês.
-            </p>
-            <p>
-                Att,
-            </p>
-            <p>
-                A namorada da Luísa.
-            </p>
-        </section>
-
-        <section id="about">
-            <div>
-                <h6 class="heading">RESPONSÁVEIS</h6>
-                <h6 class="type">IDEALIZAÇÃO</h6>
-                <p>Maria Duda Pasquel</p>
-                <p>Babi Martins</p>
-                <h6 class="type">DESIGN&CODE</h6>
-                <p>Nicoly Dandara</p>
-            </div>
-            <div>
-                <h6 class="heading">RECURSOS</h6>
-                <h6 class="type">BIBLIOTECA</h6>
-                <p><a href="https://momentjs.com/">Moment.js</a></p>
-                <h6 class="type">FERRAMENTAS</h6>
-                <p><a href="https://colorhunt.co/">Color Hunt</a></p>
-                <p><a href="https://fonts.google.com/">Google Fonts</a></p>
-            </div>
-        </section>
-
-        <footer>
-            <p>e aí, bão de minas?</p>
-            <p>obrigado pela visita. nós te desejamos muito amor.</p>
-            <p>entre em contato para críticas, elogios e consultas de tarô</p>
-
-            <ul>
-                <li><a href="https://twitter.com/nydndr"><img src="view/twitter.png"></a></li>
-                <li><a href="https://github.com/nydndr"><img src="view/github.png"></a></li>
-            </ul>
+            </section>
         </footer>
 
-        <script src="js/jquery-3.3.1.min.js"></script>
-        <script src="js/moment.min.js"></script>
-        <script src="js/consulta.js"></script>
+            <section id="telaResultado" class="overflow-auto w-full text-white pinkBackground" x-show="isModalOpen"
+            :class="{ 'absolute inset-0 ': isModalOpen }">
+                <button class="w-16 h-16 m-0 p-0 ml-8" @click="isModalOpen = false" @click="isFooterVisible = true">
+                    <svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 25 25" width="30" height="30" stroke="currentColor">
+                        <path d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                    </svg>
+                </button>
+                <div class="flex flex-col space-y-16">
+                    <div class="text-center">
+                        <p class="font-medium text-6xl">383</p>
+                        <p class="text-2xl">dias de namoro.</p>
+                    </div>
+                    <div class="text-center">
+                        <p class="font-medium text-6xl">616</p>
+                        <p class="text-2xl">dias para o 1000º.</p>
+                    </div>
+                    <div class="text-center">
+                        <p class="font-medium text-6xl">23/01/21</p>
+                        <p class="text-2xl">é a data do seu milésimo dia.</p>
+                    </div>
+                </div>
+            </section>
+
     </body>
 </html>
