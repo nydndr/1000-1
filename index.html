@@ -17,21 +17,21 @@
     </head>
 
     <body  x-data="{ 'isModalOpen': false }">
-        <section class="w-full h-full grid lg:grid-cols-2 sm:grid-cols-1 pt-24 pb-16 pl-32 pr-32"
+        <section class="w-full h-full grid lg:grid-cols-2 sm:grid-cols-1 pt-16 pb-16 pl-32 pr-32"
             style="background-color: #FFFAFA;"
             @keydown.escape="showModal = false">
-            <div class="lg:w-4/5 sm:pl-24 sm:pr-24 sm:mb-8">
+            <div class="sm:pl-24 sm:pr-24 sm:mb-24">
                 <h1 class="fredoka text-6xl pinkText mb-0">1000&1</h1>
                 <h2 class="lg:text-2xl sm:text-4xl mt-0">Insira o conceito de 1000 dias na sua relação.</h2>
                 <h3 class="lg:text-lg sm:text-2xl mt-2">Abrace os mais de dois anos que vocês passaram, ou passarão, juntos.
                     <span class="pinkText">1000 é um número muito grande, assim como vocês.</span>
                 </h3>
-                <img class="lg:w-3/5 sm:w-5/6 ml-16 mt-8" src="view/couple1.png">
+                <img class="w-full sm:w-5/6 mt-8" src="view/couple1.png">
             </div>
             <div class="w-4/5 flex justify-center ml-16" style="background-color: #FEEBC8;">
-                <form class="text-center pt-24 pb-24">
-                    <h4 class="lg:text-2xl sm:text-4xl mb-12">Quando você<br>começou a<br>namorar?</h4>
-                    <input class="block mb-12 bg-white appearance-none rounded lg:text-base sm:text-2xl py-2 px-4 text-gray-700 leading-tight
+                <form class="text-center space-y-24 mt-24 mb-24">
+                    <h4 class="lg:text-2xl sm:text-4xl">Quando você<br>começou a<br>namorar?</h4>
+                    <input class="block bg-white appearance-none rounded lg:text-base sm:text-2xl py-2 px-4 text-gray-700 leading-tight
                     focus:outline-none focus:bg-white focus:border-purple-500" type="date" id="data-inicio">
                     <button type="button"
                         @click="isModalOpen = true"
@@ -53,9 +53,9 @@
                     <p class="text-lg">Desenvolvido por: Nicoly Dandara</p>
                     <div class="mb-8">
                         <ul class="flex mt-8 space-x-4">
-                            <a class="m-0 w-1/12"><img src="view/github.png"></a>
-                            <a class="m-0 w-1/12"><img src="view/behance.png"></a>
-                            <a class="m-0 w-1/12"><img  src="view/twitter.png"></a>
+                            <a class="m-0 w-1/12" href="https://github.com/nydndr"><img src="view/github.png"></a>
+                            <a class="m-0 w-1/12" href="https://www.behance.net/nicolydandara"><img src="view/behance.png"></a>
+                            <a class="m-0 w-1/12" href="https://twitter.com/nydcosa"><img  src="view/twitter.png"></a>
                         </ul>
                     </div>
                         
@@ -63,14 +63,14 @@
                 <div class="grid grid-cols-2">
                     <div class="space-y-2 text-lg">
                         <p class="font-medium">Ferramentas</p>
-                        <p><a href="https://momentjs.com/">Moment.js</a></p>
-                        <p><a href="https://github.com/alpinejs/alpine">Alpine.js</a></p>
-                        <p><a href="https://tailwindcss.com/">Tailwind CSS</a></p>
+                        <p><a class="border-b border-white hover:border-yellow-400 hover:text-yellow-400" href="https://momentjs.com/">Moment.js</a></p>
+                        <p><a class="border-b border-white hover:border-yellow-400 hover:text-yellow-400" href="https://github.com/alpinejs/alpine">Alpine.js</a></p>
+                        <p><a class="border-b border-white hover:border-yellow-400 hover:text-yellow-400" href="https://tailwindcss.com/">Tailwind CSS</a></p>
                     </div>
                     <div class="space-y-2 text-lg">
                         <p class="font-medium">Ilustrações</p>
-                        <p><a href="https://blush.design/">Blush Design</a></p>
-                        <p><a href="https://heroicons.dev/">Hero Icons</a></p>
+                        <p><a class="border-b border-white hover:border-yellow-400 hover:text-yellow-400" href="https://blush.design/">Blush Design</a></p>
+                        <p><a class="border-b border-white hover:border-yellow-400 hover:text-yellow-400" href="https://heroicons.dev/">Hero Icons</a></p>
                     </div>
                 </div>
             </section>
