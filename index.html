@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <title>1000&1</title>
         <link rel="icon" href="view/favicon.ico">
+
         <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
         <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
         <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
@@ -12,45 +13,45 @@
             .fredoka{ font-family: 'Fredoka One', cursive;}
             .pinkBackground { background-color: #FF6F5E;}
             .pinkText { color: #FF6F5E;}
-            body { overflow: hidden;}
         </style>
     </head>
 
-    <body  x-data="{ 'isModalOpen': false, 'isFooterVisible': true}">
-        <section class="w-full h-full grid grid-cols-2 pt-24 pb-16 pl-32 pr-32" style="background-color: #FFFAFA;" @keydown.escape="showModal = false">
-            <div class="w-4/5">
+    <body  x-data="{ 'isModalOpen': false }">
+        <section class="w-full h-full grid lg:grid-cols-2 sm:grid-cols-1 pt-24 pb-16 pl-32 pr-32"
+            style="background-color: #FFFAFA;"
+            @keydown.escape="showModal = false">
+            <div class="lg:w-4/5 sm:pl-24 sm:pr-24 sm:mb-8">
                 <h1 class="fredoka text-6xl pinkText mb-0">1000&1</h1>
-                <h2 class="text-2xl mt-0">Insira o conceito de 1000 dias na sua relação.</h2>
-                <h3 class="text-lg mt-2">Abrace os mais de dois anos que vocês passaram, ou passarão, juntos.
+                <h2 class="lg:text-2xl sm:text-4xl mt-0">Insira o conceito de 1000 dias na sua relação.</h2>
+                <h3 class="lg:text-lg sm:text-2xl mt-2">Abrace os mais de dois anos que vocês passaram, ou passarão, juntos.
                     <span class="pinkText">1000 é um número muito grande, assim como vocês.</span>
                 </h3>
-                <img class="w-3/5 ml-16 mt-8" src="view/couple1.png">
+                <img class="lg:w-3/5 sm:w-5/6 ml-16 mt-8" src="view/couple1.png">
             </div>
             <div class="w-4/5 flex justify-center ml-16" style="background-color: #FEEBC8;">
                 <form class="text-center pt-24 pb-24">
-                    <h4 class="text-2xl mb-12">Quando você<br>começou a<br>namorar?</h4>
-                    <input class="block mb-12 bg-white appearance-none rounded w-64 py-2 px-4 text-gray-700 leading-tight
+                    <h4 class="lg:text-2xl sm:text-4xl mb-12">Quando você<br>começou a<br>namorar?</h4>
+                    <input class="block mb-12 bg-white appearance-none rounded lg:text-base sm:text-2xl py-2 px-4 text-gray-700 leading-tight
                     focus:outline-none focus:bg-white focus:border-purple-500" type="date" id="data-inicio">
                     <button type="button"
                         @click="isModalOpen = true"
-                        @click="isFooterVisible = false"
                         id="calcular-btn"
-                        class="shadow pinkBackground hover:bg-red-500
+                        class="shadow pinkBackground hover:bg-red-500 lg:text-base sm:text-2xl
                         focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" >Calcular</button>
                 </form>
             </div>
         </section>
 
-        <footer class="w-full h-full pinkBackground mt-0 pt-24 pb-16 pl-32 pr-32 text-white" x-show="isFooterVisible">
+        <footer class="w-full h-full pinkBackground mt-0 pt-24 pb-16 pl-32 pr-32 text-white">
             
             <h4 class="fredoka text-3xl mb-16">1000&1</h4>
-            <section class="grid grid-cols-2">
+            <section class="grid lg:grid-cols-2 sm:grid-cols-1">
                 <div class="w-4/5">
                     <p class="text-base mb-4">Da série de piadas levadas a sério demais:</p>
                     <p class="text-3xl mb-16">Esse site é resultado de uma<br>conversa entre amigos, funcionalidade e estética são um completo acidente.</p>
                     <p class="text-lg mb-4">Idealizado por: Duda Pasquel e Bárbara Martins</p>
                     <p class="text-lg">Desenvolvido por: Nicoly Dandara</p>
-                    <div>
+                    <div class="mb-8">
                         <ul class="flex mt-8 space-x-4">
                             <a class="m-0 w-1/12"><img src="view/github.png"></a>
                             <a class="m-0 w-1/12"><img src="view/behance.png"></a>
@@ -75,17 +76,21 @@
             </section>
         </footer>
 
-            <section class="overflow-auto w-full text-white pinkBackground" x-show="isModalOpen"
+        <section
+            class="overflow-auto w-full text-white pinkBackground"
+            x-show="isModalOpen"
             :class="{ 'absolute inset-0 ': isModalOpen }">
-                <button class="w-16 h-16 m-0 p-0 ml-8" @click="isModalOpen = false" @click="isFooterVisible = true">
-                    <svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 25 25" width="30" height="30" stroke="currentColor">
-                        <path d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
-                    </svg>
-                </button>
-                <div id="container-resultado" class="flex flex-col space-y-16">
+            
+            <button class="w-16 h-16 m-0 p-0 ml-8" @click="isModalOpen = false">
+                <svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    viewBox="0 0 25 25" width="30" height="30" stroke="currentColor">
+                    <path d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                </svg>
+            </button>
+            <div id="container-resultado" class="flex flex-col space-y-16">
 
-                </div>
-            </section>
+            </div>
+        </section>
     </body>
 
     <script src="js/moment.min.js"></script>
